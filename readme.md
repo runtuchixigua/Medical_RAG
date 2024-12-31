@@ -2,9 +2,15 @@
 
 # Medical_RAG 项目
 
-`Medical_RAG`是一个基于`ChatGLM`的对话生成模型，使用Langchain和Hugging Face
-Transformers库构建，支持加载和调用预训练的`ChatGLM`模型来进行自然语言生成任务。通过对话历史上下文的维护，模型能够生成更加流畅和自然的回答。
+本项目旨在构建一个医疗文本分析与问答系统，通过使用自然语言处理技术，将医疗相关的长文本分割、嵌入向量，并存储于FAISS数据库中，以便快速检索和生成基于上下文的回答。
 
+
+
+## 文件说明
+
+- `get_vector.py`：用于加载文本文件，将其分割为小块，并使用HuggingFace嵌入模型将文本转换为向量，存储于FAISS数据库中。
+- `model.py`：定义了一个基于Langchain的LLM类，用于加载预训练的模型和分词器，并生成回答。
+- `predict.py`：定义了问答流程，包括从FAISS数据库中检索相关内容，并使用`ChatGLM_MD`模型生成回答。
 
 ## 依赖项
 
